@@ -1,0 +1,92 @@
+import java.util.Scanner; 
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    /*
+    Developer: Angelina Scott
+    Date: 26/02/22
+    Class Code: ICS4UE
+    Description: a solution for CCC2020 - Problem J4: Cyclic Shifts
+    */
+    
+    Scanner scan = new Scanner(System.in); 
+
+    // Variables 
+    String space = " ";
+    String string = "";
+    String text = "";
+
+    // Boolean values
+    boolean containsValue = false;
+    boolean done = true;
+    
+      
+    // Loops if the string or text total doesn't meet requirements 
+    while(done){
+      System.out.println("Enter some text: ");
+      // User input used to collect string that will be cyclic
+      // shifted
+      text = scan.nextLine().toUpperCase();
+      System.out.println(space);
+
+      
+      System.out.println("Enter a string: ");
+      // User input used to collect string that will be cyclic
+      // shifted
+      string = scan.nextLine().toUpperCase();
+    
+      // Counts the amount of chars in scanned string and text
+      long stringTotal = string.chars().count();
+      long textTotal = text.chars().count();
+
+
+      // Checks that stringTotal and textTotal both meet
+      // requirements
+      if (stringTotal > 1000 || textTotal > 1000){
+        System.out.println(space);
+        System.out.println("Your string or text is too long.");
+        System.out.println(space);
+      }
+
+      // Moves on to next function if char count is less than 1000
+      else{
+        System.out.println(space);
+        done = true;
+       break;
+      } 
+    }
+
+    // Moves the char in index 0 to the back of the string for the length of the
+    // string
+    for (int i = 0; i < string.length(); i++) {
+        char firstChar = string.charAt(0);
+      
+        // Collects chars after firstChar
+        string = string.substring(1, string.length());
+
+        // Creates cyclic shift change
+        string += firstChar;
+        
+        // Checks for cyclic shift featuring variable "string"
+        if (text.contains(string)){ 
+          containsValue = true;
+          System.out.println("Does " + text + " contain " + string + "? " + containsValue);
+          System.exit(0);
+        }   
+    }
+    // If the for loop above goes through the length without the text containing 
+    // the string, the program will end with this print statement
+    System.out.println("Does " + text + " contain " + string + "? " + containsValue); 
+  }
+}
+
+
+
+// Please note: the following are the sources that I have used as references
+
+/*
+Java program to compute all the permutations of the string. Programiz. (n.d.). Retrieved February 27, 2022, from https://www.programiz.com/java-programming/examples/compute-all-string-permutation 
+
+Landup, D. (2020, February 26). Java: Check if string contains a substring. Stack Abuse. Retrieved February 27, 2022, from https://stackabuse.com/java-check-if-string-contains-a-substring/ 
+*/
