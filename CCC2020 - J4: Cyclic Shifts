@@ -4,6 +4,7 @@ import java.util.*;
 class Main {
   public static void main(String[] args) {
     /*
+    This project follows TDSB's Academic Honesty Policy
     Developer: Angelina Scott
     Date: 26/02/22
     Class Code: ICS4UE
