@@ -4,7 +4,6 @@ import java.util.*;
 class Main {
   public static void main(String[] args) {
     /*
-    This program follows TDSB's Academic Honesty policy
     Developer: Angelina Scott
     Date: 26/02/22
     Class Code: ICS4UE
@@ -72,13 +71,18 @@ class Main {
         // Checks for cyclic shift featuring variable "string"
         if (text.contains(string)){ 
           containsValue = true;
-          System.out.println("Does " + text + " contain " + string + "? " + containsValue);
+
+          System.out.println("Does the " + text + " contain the string? " + containsValue);
           System.exit(0);
         }   
     }
+
+
+    
     // If the for loop above goes through the length without the text containing 
     // the string, the program will end with this print statement
     System.out.println("Does " + text + " contain " + string + "? " + containsValue); 
+    scan.close();
   }
 }
 
